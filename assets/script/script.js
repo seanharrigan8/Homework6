@@ -21,7 +21,7 @@ function getCoordinates(cityName) {
     .catch(error => console.error('Error fetching coordinates:', error));
 }
 
-//5-day forecast
+//5-day forecast fuction with fetch
 function getWeatherForecast(lat, lon) {
   const apiKey = 'c4a2a6d84fa6b9b0cd24e083d620ae71';
   const url = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}`;
@@ -30,7 +30,7 @@ function getWeatherForecast(lat, lon) {
     .then(response => response.json())
     .then(data => {
       updateForecastWeather(data);
-    })
+     })
     .catch(error => console.error('Error fetching forecast:', error));
 }
 
@@ -39,7 +39,7 @@ function updateCurrentWeather(data) {
   currentWeather.innerHTML = `Temperature: ${(data.main.temp - 273.15).toFixed(2)}°C, Description: ${data.weather[0].description}, Humidity: ${data.main.humidity}%`;
 }
 
-// Function to update the DOM with forecast weather data. also adjusts kelvin to C and F
+// Function to update the DOM with forecast weather data. also adjusts kelvin to C and F.
 function updateForecastWeather(data) {
   forecastWeather.innerHTML = '';
   data.list.forEach((forecast, index) => {
@@ -63,7 +63,7 @@ searchButton.addEventListener('click', () => {
   searchInput.value = ''; // Clear the search input
 });
 
-// localStorage function
+// localStorage function 
 function saveToHistory(cityName) {
   let history = localStorage.getItem('searchHistory');
   history = history ? JSON.parse(history) : [];

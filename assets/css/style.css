@@ -1,10 +1,4 @@
 
-/* * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-   */
   body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -37,14 +31,15 @@
     padding: 10px;
     cursor: pointer;
   }
-  
+/*   
+  //format in the future for each//  */
+
   #current-weather, #forecast-weather {
     background-color: darkgrey;
     padding: 20px;
     margin-bottom: 20px;
-
   }
-  
+  /* container doesn't center the way it should */
   #forecast-container {
     display: flex;
     justify-content: space-between;
@@ -85,4 +80,5 @@
     bottom: 0;
     width: 100%;
   }
-  
+/*   
+  //comments for resubmission purposes// */
